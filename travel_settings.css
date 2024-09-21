@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gray: rgb(230, 224, 224);
+    --light-gray: rgb(248, 248, 248);
+    --deep-gray: rgb(160, 160, 160);
+    --deep-green: #025214;
+    --light-green: #029b26;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: row;
+    width: 120rem;
+    gap: 10rem;
+}
+
+@media only screen and (max-width:600px) {
+    .settings-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6b6b6b;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
+    border-left: 2px solid var(--light-gray);
+}
+
+.sidebar ul li a:hover {
+    color: var(--light-green);
+    border-left: 2px solid var(--light-green);
+}
+
+.main-content {
+    flex-grow: 1;
+    width: 68%;
+}
+@media only screen and (max-width: 600px){
+    .main-content {
+        width: 100%;
+    }
+}
+header h3 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Profile Section begins */
+
+
+.profile-section {
+    background-color: white;
+    padding: 20px 40px;
+    margin: 10px auto;
+    width: 100%;
+    border: solid 1px var(--gray);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+.view-link {
+    display: block;
+    text-align: right;
+    padding: 5px 0px;
+}
+
+.view-link a {
+    color: var(--deep-green);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: normal;
+
+}
+
+.view-link a:hover {
+    color: var(--light-green);
+}
+
+.select-arrow-active:after {
+    border-color: transparent transparent #555 transparent;
+}
+
+/* Select option field */
+.custom-select-container {
+    width: 100%;
+    position: relative; 
+    border: solid 2px var(--gray);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+.custom-select-container:focus,
+.custom-select-container:hover {
+    border-color: var(--deep-gray);
+    outline: none;
+}
+
+.custom-select {
+    position: relative;
+    font-size: 16px;
+    width: 100%;
+}
+
+.select-selected {
+    font-size: 1.5rem;
+    width: 100%;
+    padding-right: 80%;
+}
+@media only screen and (max-width:600px) {
+    .select-selected  {
+        padding-right: 50%;
+    }
+}
+
+.select-selected:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 5px solid transparent;
+    border-color: #555 transparent transparent transparent;
+}
+
+.select-items {
+    position: absolute;
+    background-color: white;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    z-index: 99;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 25rem;
+}
+
+.select-items .select-option {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select-items .select-option:hover {
+    background-color: var(--light-gray);
+    /* Custom hover color */
+    color: black;
+}
+
+.select-hide {
+    display: none;
+}
+
+/* Profile Section ends */
+/* end select option */
+
+/* ==========Experience Section Begins =========== */
+
+.earnings-privacy p {
+    margin: 10px 0;
+}
+
+.tooltip {
+    background-color: green;
+    border-radius: 50%;
+    padding: 0 7px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: white;
+}
+
+.earnings-privacy a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.earnings-privacy a:hover {
+    text-decoration: underline;
+}
+
+.experience-level{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.experience-options {
+    display: flex;
+    gap: 10px;
+    justify-content: between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+    
+}
+
+.experience-options .option {
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+    padding: 20px;
+    flex-grow: 1;
+    width: 250px;
+    height: 160px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media only screen and (max-width:600px) {
+    .experience-options   {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+    }
+    .experience-options .option {
+        width: 100%;
+    }
+}
+
+.experience-options .option.active, .experience-options .option:hover{
+    background: var(--light-gray);
+    border-color: var(--deep-green);
+    cursor: pointer;
+}
+.option p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+.entry{
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--gray);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; 
+    right: 15px;
+    top: 10px;
+    padding: 0px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;;
+}
+.entry.active{
+    background: var(--deep-green);
+    border-color: transparent;
+}
+.entry-2{
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--gray);
+    border-radius: 100%;
+    line-height: 15px;
+    display: none;
+    margin: 0px;
+}
+.entry-2.active{
+    border-color: white;
+    display: block;
+}
+
+/* ============= EXPERIENCE SECTION ENDS  ===================== */
+/* ============= CATEGORIES SECTION BEGINS  ===================== */
+.categories span {
+    background-color: #e7f4fa;
+    padding: 5px 10px;
+    color: #333;
+    border-radius: 5px;
+}
+
+.categories {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: start;
+}
+
+.categories .tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #555;
+}
+.categories-text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.categories-text p{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.categories .edit-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid var(--gray);
+    border-radius: 100%;
+    padding: 5px;
+    cursor: pointer;
+}
+.categories .edit-btn:hover {
+    background: var(--light-gray);
+    cursor: pointer;
+}
+/* =============== SPECIAL PROFILE SECTION BEGINS ============ */
+.specialized-profiles {
+    display: flex;
+    align-items: start;
+    gap: 3rem;
+}
+.special-title{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.special-title p, .special-title a{
+    font-size: 16px;
+}
+.publish{
+    color: var(--deep-gray);
+}
+ .add-profile-btn {
+    background-color: #fff;
+    border: 2px solid green;
+    color: green;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.specialized-profiles .add-profile-btn:hover {
+    background-color: green;
+    color: white;
+}
+
+.learn-more {
+    color: green;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.fluent--edit-16-regular {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    padding: 2px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M14.236 1.764a2.62 2.62 0 0 0-3.707 0L2.657 9.636a2.96 2.96 0 0 0-.772 1.354l-.87 3.386a.5.5 0 0 0 .61.608l3.385-.869a2.95 2.95 0 0 0 1.354-.772l7.872-7.872a2.62 2.62 0 0 0 0-3.707m-3 .707a1.621 1.621 0 1 1 2.293 2.293l-.779.779l-2.293-2.293zM9.75 3.957l2.293 2.293l-6.386 6.386a1.95 1.95 0 0 1-.896.51l-2.567.66l.66-2.567a1.94 1.94 0 0 1 .51-.896z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
