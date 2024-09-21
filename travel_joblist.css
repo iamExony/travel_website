@@ -26,6 +26,13 @@ div::after {
   border-radius: 5px;
 }
 
+@media only screen and (max-width:600px) {
+  .container-joblist {
+    margin-top: 20rem;
+    width: 100%;
+  }
+}
+
 h1 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -66,6 +73,33 @@ h1 {
 
 .header h3 {
   font-size: 36px;
+}
+
+.post-new-job {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-new-job:hover {
+  background-color: #026902;
+}
+
+@media only screen and (max-width:600px) {
+  .header {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .post-new-job {
+    width: 100%;
+  }
 }
 
 /* ========== SEEARCH AND FILTER ============= */
@@ -131,9 +165,20 @@ h1 {
   font-size: 18px;
 }
 
+@media only screen and (max-width:600px) {
+  .search-section {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .filter-link {
+    display: none;
+  }
+}
+
 /* ============== JOB POSTS ================= */
 
-.job-post {
+.job-post-desktop {
   padding: 15px;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
@@ -143,7 +188,12 @@ h1 {
   gap: 2rem;
 }
 
-.job-post:hover {
+.job-post-mobile {
+  display: none;
+}
+
+.job-post-desktop:hover,
+.job-post-mobile:hover {
   background: var(--light-gray);
 }
 
@@ -153,7 +203,7 @@ h1 {
   justify-content: space-between;
 }
 
-.job-post:first-child {
+.job-post-destop:first-child {
   border-top: none;
 }
 
@@ -214,40 +264,6 @@ h1 {
 
 }
 
-/* pagination */
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  color: #888;
-}
-
-.page-section {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.pagination .page-number {
-  margin-right: 10px;
-  cursor: pointer;
-
-}
-
-.pagination .page-number.active {
-  font-weight: bold;
-  color: white;
-  background: green;
-  padding: 4px 10px;  
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-
-}
-
-
-
 .reuse-posting {
   padding: 8px 16px;
   background-color: #fff;
@@ -255,21 +271,7 @@ h1 {
   border: 2px solid green;
   border-radius: 10px;
   cursor: pointer;
-}
-
-
-
-.post-new-job {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.post-new-job:hover {
-  background-color: #026902;
+  display: block;
 }
 
 .dots {
@@ -290,6 +292,70 @@ h1 {
 .reuse-posting:hover,
 .dots:hover {
   background-color: #f3f3f3;
+}
+
+
+@media only screen and (max-width:600px) {
+  .job-post-desktop {
+    display: none;
+  }
+
+  .job-post-mobile {
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .reuse-posting {
+    display: none;
+  }
+
+  .job-title h3 {
+    color: var(--light-green);
+    text-decoration: underline;
+  }
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: #888;
+}
+
+.pagination p {
+  color: black;
+  display: block;
+}
+
+.page-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination .page-number {
+  margin-right: 10px;
+  cursor: pointer;
+
+}
+
+.pagination .page-number.active {
+  font-weight: bold;
+  color: white;
+  background: green;
+  padding: 4px 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+
 }
 
 .ooui--next-ltr {
@@ -326,4 +392,30 @@ h1 {
 .ooui--next-ltr {
   cursor: pointer;
   color: #888;
+  display: block;
+}
+
+@media only screen and (max-width:600px) {
+  .pagination p {
+    display: none;
+  }
+
+  .pagination .previous,
+  .pagination .next {
+    display: none;
+  }
+
+  .page-section {
+    width: 100%;
+  }
+  .pagination .page-number.active {
+    font-weight: bold;
+    color: black;
+    background: none;
+    padding: 4px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  
+  }
 }
