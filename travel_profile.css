@@ -60,7 +60,8 @@ a:active {
 .profile-header {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  gap: 2rem;
+  padding: 40px;
   border-bottom: 1px solid #e0e0e0;
   border-radius: 10px 10px 0 0;
   background: white;
@@ -82,10 +83,9 @@ a:active {
 }
 
 .profile-pic img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 2px solid #e0e0e0;
 }
 
 .status-dot {
@@ -94,7 +94,7 @@ a:active {
   left: 1px;
   width: 20px;
   height: 20px;
-  background-color: #00a775;
+  background-color: green;
   border-radius: 50%;
   border: 4px solid white;
 }
@@ -114,6 +114,9 @@ a:active {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+.profile-info-mobile{
+  display: none;
 }
 
 .profile-info h3 {
@@ -200,7 +203,61 @@ a:active {
   border-right: 1px solid #e0e0e0;
   padding-right: 20px;
 }
+/* Tablet Device Screen */
+@media only screen and (max-width: 980px){
+  .profile-container {
+    margin-top: 200px;
+    width: 100%;
+    border-radius:unset;
+    border: none;
+  }
+  .profile-header {
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    border-radius:unset;
+    flex-direction: row;
+    padding: 40px 20px;
+    width: 100%;
+  }
+  .profile-content{
+    width: 100%;
+  }
+  .profile-actions{
+    display: none;
+  }
+  .profile-info{
+    display: none;
+  }
+  .profile-info p{
+    display: block;
+    
+  }
+  .profile-info h3{
+    font-size: 28px;
 
+  }
+ 
+  .profile-info i{
+    color: green;
+    font-size: 24px;
+  }
+  
+  .profile-title{
+    display: flex;
+    align-items:normal;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .profile-info i:hover{
+    color: rgb(6, 190, 6);
+  } 
+  .share-link{
+    display: none;
+  }
+  .profile-info-mobile{
+    display: block;
+  }
+}
 /* ============ Sidebar Section ================ */
 .sidebar {
   width: 50%;
@@ -316,11 +373,21 @@ a:active {
   font-size: 16px;
   cursor: pointer;
 }
-
-
+/* Mobile Device Screen */
+@media only screen and (max-width: 600px){
+  .profile-main{
+    flex-direction:column-reverse;
+  }
+  .sidebar{
+    width: 100%;
+  }
+  .promote-section{
+    width: 100%;
+  }
+}
 /* Job Title Section Styling */
 .job-title-section {
-  padding: 20px;
+  padding: 40px 20px;
   background-color: white;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -456,7 +523,7 @@ a:active {
 .container-portfolio {
   width: 100%;
   background-color: white;
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
   border-bottom: 1px solid rgb(202, 202, 202);  
 }
