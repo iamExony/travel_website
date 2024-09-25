@@ -11,7 +11,22 @@
     --deep-green: #025214;
     --light-green: #029b26;
 }
-
+/* ========= links ========== */
+/* unvisited link */
+a:link {
+    color: black;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: black;
+  }
+  
+  /* selected link */
+  a:active {
+    color: black;
+  }
+  
 body {
     font-family: Arial, sans-serif;
 }
@@ -56,10 +71,61 @@ body {
     flex-grow: 1;
     width: 68%;
 }
+.settings-container-section {
+    display: none;
+  }
 @media only screen and (max-width: 600px){
+    .settings-container {
+        gap: unset;
+    }
+    .sidebar{
+        display: none;
+    }
     .main-content {
         width: 100%;
     }
+    .settings-container-section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 200px;
+        width: 100%;
+        display: block;
+      }
+      
+      h2 {
+        margin-bottom: 20px;
+        font-family: unset;
+      }
+      
+      .section h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      .settings-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        padding: 20px 0;
+        font-size: 18px;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease;
+      }
+      
+      .arrow {
+        font-size: 18px;
+        color: #333;
+      }
+      
+      .settings-item:last-child {
+        border-bottom: 1px solid #ddd;
+      }
+      .view-link{
+        text-align: left;
+      }
 }
 header h3 {
     font-size: 36px;
